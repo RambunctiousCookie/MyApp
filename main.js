@@ -29,9 +29,13 @@ app.get('/',(req,resp)=>{
     //send the response again
         //use backticks
         //there is a proper mvc way to do it but this is a shortcut
-    resp.send(`<h1>The time is now ${new Date()}</h1>`)
+    resp.send(`<h1>The time is now ${new Date()}</h1><img src="/static/bunnie.png">`)
 
 })
+
+
+//serve static resource
+app.use("/static",express.static(__dirname+"/static"))
 
 //start our web application
 app.listen(port,()=>{
